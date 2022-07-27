@@ -26,4 +26,13 @@ Cinema.prototype.findByMinLength = function(time) {
   const result = this.films.filter((n) => time <= n.length);
   return result
 };
+
+Cinema.prototype.findTotalRuntime = function() {
+  return this.films.reduce((n, film) => {
+    return n + film.length
+  }, 0)
+  }
+
+
+// console.log(`Total price: ${total}`);
 module.exports = Cinema;
